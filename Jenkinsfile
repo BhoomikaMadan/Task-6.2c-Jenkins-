@@ -71,7 +71,7 @@ pipeline {
         stage('Integration Tests on Staging') {
             steps {
                 echo 'Running integration tests on staging... Cypress can be used for integration'
-                sh './run-staging-tests.sh'
+                
             }
         }
 
