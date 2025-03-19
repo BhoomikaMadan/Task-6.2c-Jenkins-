@@ -1,21 +1,21 @@
 pipeline {
     agent any
     environment {
-        EMAIL = 'your_email@example.com' // Change to your email
+        EMAIL = 'b02473407@gmail.com' // Change to your email
     }
 
     stages {
         stage('Build') {
             steps {
-                echo 'Building the application...'
-                sh 'mvn clean package' // Example for Java/Maven build
+                echo 'Building the application... npm and maven can be used for Building '
+                
             }
         }
 
         stage('Unit and Integration Tests') {
             steps {
-                echo 'Running unit and integration tests...'
-                sh 'mvn test'  // Example for running tests
+                echo 'Running unit and integration tests...For testing ,JUnit can be used'
+                
             }
             post {
                 success {
@@ -37,15 +37,15 @@ pipeline {
 
         stage('Code Analysis') {
             steps {
-                echo 'Performing code analysis...'
-                sh 'sonar-scanner'  // Example for SonarQube
+                echo 'Performing code analysis...ESlint can be used for code analysis'
+               
             }
         }
 
         stage('Security Scan') {
             steps {
-                echo 'Performing security scan...'
-                sh 'npm audit'  // Example for Node.js security check
+                echo 'Performing security scan...Bandit can be used for security scan'
+               
             }
             post {
                 success {
@@ -67,22 +67,21 @@ pipeline {
 
         stage('Deploy to Staging') {
             steps {
-                echo 'Deploying to staging environment...'
-                sh './deploy-to-staging.sh' // Write this script for AWS EC2 deployment
-            }
+                echo 'Deploying to staging environment...AWS,Docker can be used in Deploy '
+                
         }
 
         stage('Integration Tests on Staging') {
             steps {
-                echo 'Running integration tests on staging...'
+                echo 'Running integration tests on staging...Cypress can be used for integration '
                 sh './run-staging-tests.sh'
             }
         }
 
         stage('Deploy to Production') {
             steps {
-                echo 'Deploying to production environment...'
-                sh './deploy-to-production.sh'
+                echo 'Deploying to production environment...Heroku could be used for this deployment'
+               
             }
         }
     }
