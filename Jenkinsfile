@@ -7,7 +7,7 @@ pipeline {
     stages {
         stage('Build') {
             steps {
-                echo 'Building the application... npm and maven can be used for Building '
+                echo 'Building the application... npm and maven can be used for Building... '
             }
         }
 
@@ -19,7 +19,7 @@ pipeline {
                 success {
                     emailext (
                         subject: "Unit Tests Passed",
-                        body: "Unit tests completed successfully.",
+                        body: "Unit tests completed successfully!!!.",
                         to: "${EMAIL}"
                     )
                 }
