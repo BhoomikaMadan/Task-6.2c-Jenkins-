@@ -19,7 +19,7 @@ pipeline {
                 success {
                     emailext (
                         subject: "Unit Tests Passed",
-                        body: "Unit tests completed successfully.!!",
+                        body: "Unit tests completed successfully.",
                         to: "${EMAIL}"
                     )
                 }
