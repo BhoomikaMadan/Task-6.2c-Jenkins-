@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        EMAIL = 'b02473407@gmail.com' // Change to your email
+        EMAIL = 'b02473407@gmail.com'  
     }
 
     stages {
@@ -52,7 +52,7 @@ pipeline {
                 success {
                     emailext (
                         subject: "Security Scan Passed",
-                        body: "Security scan completed successfully.",
+                        body: "Security scan completed successfully!!!.",
                         to: "${EMAIL}"
                     )
                 }
