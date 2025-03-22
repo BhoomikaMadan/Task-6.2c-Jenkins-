@@ -1,7 +1,7 @@
 pipeline {
     agent any
     environment {
-        EMAIL = 'b02473407@gmail.com'  
+        EMAIL = 'saravjeet.2009@gmail.com'  
     }
 
     stages {
@@ -33,7 +33,7 @@ pipeline {
                  always {
             emailext subject: "Build Completed: ${env.JOB_NAME} - Build #${env.BUILD_NUMBER}",
                      body: "Check console output at ${env.BUILD_URL} to view the results.",
-                     to: 'b02473407@gmail.com'
+                     to: 'saravjeet.2009@gmail.com'
         }
             }
         }
